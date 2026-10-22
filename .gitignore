@@ -1,0 +1,26 @@
+# .NET
+bin/
+obj/
+*.user
+.vs/
+TestResults/
+
+# Dados locais da API (catálogo SQLite, chaves, storage local)
+src/backend/EasyOS.Api/data/
+*.db
+*.db-shm
+*.db-wal
+
+# Build do frontend copiado para a API
+src/backend/EasyOS.Api/wwwroot/
+
+# Node
+node_modules/
+dist/
+
+# Segredos
+.env
+deploy/.env
+
+# Sistema legado (contém senhas em texto puro nos Web.config: não versionar)
+old/

@@ -1,0 +1,41 @@
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background: var(--mantine-color-gray-0);
+}
+
+.print-only {
+  display: none;
+}
+
+/* Impressão de OS e certificado direto do navegador (Salvar como PDF). */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block;
+  }
+
+  body {
+    background: white;
+  }
+
+  .mantine-AppShell-main {
+    padding: 0 !important;
+  }
+
+  .mantine-Paper-root {
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .avoid-break {
+    break-inside: avoid;
+  }
+}

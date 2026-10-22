@@ -1,0 +1,483 @@
+﻿<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+          crossorigin="anonymous">
+    <title>Relatório de Acompanhamento das Atividades de Empresas de Controle de Vetores e Pragas Urbanas – RAAE/Vetores</title>
+
+    <link rel="stylesheet" href="style-inea.css">
+
+    <!--[if IE 8 ]>
+    <![endif]-->
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div style="padding: 10px;">
+        <div class="container ">
+            <div class="row">
+                <div class="col-2">
+                    <img src="inea.svg" width="100%" />
+                </div>
+                <div class="col-10 title-lower">
+                    Relatório de Acompanhamento das Atividades de Empresas de Controle de Vetores e Pragas Urbanas –
+                    <span class="remove-transform">RAAE/Vetores</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 header">
+                    Informações gerais:
+                </div>
+            </div>
+            <div class="row botton-border">
+                <div class="col-12">
+                    <span class="text-bold">Razão social: </span>
+                    <span id="company_name"></span>
+                </div>
+            </div>
+            <div class="row botton-border">
+                <div class="col-8 right-border">
+                    <span class="text-bold">Nome fantasia: </span>
+                    <span id="trading_name"></span>
+                </div>
+                <div class="col-4">
+                    <span class="text-bold">CNPJ: </span>
+                    <span id="cpf_cnpj"></span>
+                </div>
+            </div>
+            <div class="row botton-border">
+                <div class="col-12">
+                    <span class="text-bold">Endereço: </span>
+                    <span id="address"></span>
+                </div>
+            </div>
+            <div class="row botton-border">
+                <div class="col-4 right-border">
+                    <span class="text-bold">Bairro: </span>
+                    <span id="neighborhood"></span>
+                </div>
+                <div class="col-5 right-border">
+                    <span class="text-bold">Município: </span>
+                    <span id="city"></span>
+                </div>
+                <div class="col-3">
+                    <span class="text-bold">CEP: </span>
+                    <span id="zipcode"></span>
+                </div>
+            </div>
+            <div class="row botton-border">
+                <div class="col-4 right-border">
+                    <span class="text-bold">Telefone: </span>
+                    <span id="phone"></span>
+                </div>
+                <div class="col-3 right-border">
+                    <span class="text-bold">Fax: </span>
+                    <span id="fax"></span>
+                </div>
+                <div class="col-5">
+                    <span class="text-bold">E-mail: </span>
+                    <span id="email"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 right-border">
+                    <span class="text-bold">Nº do código INEA: </span>
+                </div>
+                <div class="col-4 right-border botton-border text-center">
+                    <span class="text-bold">Licença Ambiental (LAS ou LO) </span>
+                </div>
+                <div class="col-2 right-border">
+                    <span class="text-bold">Nº do RAAE/ANO: </span>
+                </div>
+                <div class="col-3">
+                    <span class="text-bold">Período do RAAE: </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 right-border">
+                    <span id="inea_code"></span>
+                </div>
+                <div class="col-2 right-border">
+                    <span class="text-bold">Nº: </span>
+                    <span id="environmental_permit"></span>
+                </div>
+                <div class="col-2 right-border">
+                    <span class="text-bold">Validade: </span>
+                    <span id="environmental_permit_expiration"></span>
+                </div>
+                <div class="col-2 right-border">
+                    <span id="raae_number"></span>
+                </div>
+                <div class="col-3">
+                    <span id="raae_date"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 header">
+                    Vetor ou praga urbana / Nº de serviços realizados:
+                </div>
+            </div>
+            <span id="plagues"></span>
+            <div class="row">
+                <div class="col-2 right-border">
+                </div>
+                <div class="col-1 right-border">
+                </div>
+                <div class="col-2 right-border">
+                </div>
+                <div class="col-1 right-border">
+                </div>
+                <div class="col-2 right-border">
+                </div>
+                <div class="col-1 right-border">
+                </div>
+                <div class="col-2 right-border">
+                </div>
+                <div class="col-1">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 header">
+                    Diluições e quantidades aplicadas
+                    <span class="remove-transform">(L ou kg)</span>:
+                </div>
+            </div>
+            <span id="products"></span>
+            <div class="row">
+                <div class="col-5 right-border">
+                </div>
+                <div class="col-1 right-border">
+                </div>
+                <div class="col-5 right-border">
+                </div>
+                <div class="col-1 ">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 header">
+                    Marcas comerciais e quantidades utilizadas
+                    <span class="remove-transform">(L ou kg)</span>:
+                </div>
+            </div>
+            <span id="brands"></span>
+            <div class="row">
+                <div class="col-5 right-border">
+                </div>
+                <div class="col-1 right-border">
+                </div>
+                <div class="col-5 right-border">
+                </div>
+                <div class="col-1 ">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 header">
+                    Locais tratados:
+                </div>
+            </div>
+            <div class="row botton-border text-center text-bold">
+                <div class="col-2 right-border">
+                    Tipo
+                </div>
+                <div class="col-1 right-border">
+                    Nº
+                </div>
+                <div class="col-2 right-border">
+                    Tipo
+                </div>
+                <div class="col-1 right-border">
+                    Nº
+                </div>
+                <div class="col-2 right-border">
+                    Tipo
+                </div>
+                <div class="col-1 right-border">
+                    Nº
+                </div>
+                <div class="col-2 right-border">
+                    Tipo
+                </div>
+                <div class="col-1">
+                    Nº
+                </div>
+            </div>
+            <span id="places"></span>
+            <div class="row">
+                <div class="col-2 right-border">
+                    <span id="place[5]"></span>
+                </div>
+                <div class="col-1 right-border">
+                    <span id="place_n[5]"></span>
+                </div>
+                <div class="col-2 right-border">
+                    <span id="place[6]"></span>
+                </div>
+                <div class="col-1 right-border">
+                    <span id="place_n[6]"></span>
+                </div>
+                <div class="col-2 right-border">
+                    <span id="place[7]"></span>
+                </div>
+                <div class="col-1 right-border">
+                    <span id="place_n[7]"></span>
+                </div>
+                <div class="col-2 right-border">
+                    <span id="place[8]"></span>
+                </div>
+                <div class="col-1">
+                    <span id="place_n[8]"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 header">
+                    Comprovante de execução de serviço (CES):
+                </div>
+            </div>
+            <div class="row text-bold">
+                <div class="col-3 right-border ">
+                    Nº total de CES emitidos
+                </div>
+                <div class="col-3 right-border ">
+                    Nº de CES executados
+                </div>
+                <div class="col-3 right-border ">
+                    Nº de CES anulados
+                </div>
+                <div class="col-3 text-bold">
+                    Nº do último CES do período
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 right-border">
+                    <span id="orders_total"></span>
+                </div>
+                <div class="col-3 right-border">
+                    <span id="orders_complete"></span>
+                </div>
+                <div class="col-3 right-border">
+                    <span id="orders_canceled"></span>
+                </div>
+                <div class="col-3">
+                    <span id="last_order"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 header">
+                    Devolução de embalagens de agrotóxicos vazias:
+                </div>
+            </div>
+            <div class="row text-center text-uppercase text-bold botton-border">
+                <div class="col-2 right-border">
+                    Data
+                </div>
+                <div class="col-4 right-border">
+                    Unidade de recebimento
+                </div>
+                <div class="col-2 right-border">
+                    Quantidade
+                </div>
+                <div class="col-4">
+                    Tipo
+                </div>
+            </div>
+            <div class="row botton-border">
+                <div class="col-2 right-border">
+                    <input type="text" class="col-12" />
+                </div>
+                <div class="col-4 right-border">
+                    <input type="text" class="col-12" />
+                </div>
+                <div class="col-2 right-border">
+                    <input type="text" class="col-12" />
+                </div>
+                <div class="col-4">
+                    <input type="text" class="col-12" />
+                </div>
+            </div>
+            <div class="row botton-border">
+                <div class="col-2 right-border">
+                    <input type="text" class="col-12" />
+                </div>
+                <div class="col-4 right-border">
+                    <input type="text" class="col-12" />
+                </div>
+                <div class="col-2 right-border">
+                    <input type="text" class="col-12" />
+                </div>
+                <div class="col-4">
+                    <input type="text" class="col-12" />
+                </div>
+            </div>
+            <div class="row botton-border">
+                <div class="col-2 right-border">
+                    <input type="text" class="col-12" />
+                </div>
+                <div class="col-4 right-border">
+                    <input type="text" class="col-12" />
+                </div>
+                <div class="col-2 right-border">
+                    <input type="text" class="col-12" />
+                </div>
+                <div class="col-4">
+                    <input type="text" class="col-12" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2 right-border">
+                    <input type="text" class="col-12" />
+                </div>
+                <div class="col-4 right-border">
+                    <input type="text" class="col-12" />
+                </div>
+                <div class="col-2 right-border">
+                    <input type="text" class="col-12" />
+                </div>
+                <div class="col-4">
+                    <input type="text" class="col-12" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 header">
+                    Responsáveis pela empresa:
+                </div>
+            </div>
+            <div class="row botton-border">
+                <div class="col-12 sub-title">
+                    Declaramos serem verdadeiras, completas e precisas as informações prestadas neste documento.
+                </div>
+            </div>
+            <div class="row text-bold">
+                <div class="col-2 right-border">
+                    Data
+                </div>
+                <div class="col-5 right-border">
+                    Nome do Responsável Técnico
+                </div>
+                <div class="col-5">
+                    Nome do Representante Legal
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2 right-border">
+                    <span id="date"></span>
+                </div>
+                <div class="col-5 right-border botton-border">
+                    <span id="technical_manager"></span>
+                </div>
+                <div class="col-5 botton-border">
+                    <span id="legal_representative"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2 right-border">
+                </div>
+                <div class="col-5 right-border text-bold">
+                    Assinatura do Responsável Técnico
+                </div>
+                <div class="col-5 text-bold">
+                    Assinatura do Representante Legal
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2 right-border">
+                </div>
+                <div class="col-5 right-border" div style="margin-bottom: 2px; max-height:140px; width:100px" class="center-img">
+                    <img id="technical_responsible_signature" style="height: 100%; width: 100%" />
+                </div>
+                <div class="col-5" div style="margin-bottom: 2px; max-height:140px; width:100px" class="center-img">
+                    <img src="/api/company/legal-representative/signature" onerror="this.style.visibility='hidden'" style="height: 100%; width: 100%" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+
+
+
+    <div id="dialog-confirm" style="display:none;" title="">
+        <p id="innerText"><span class="ui-icon ui-icon-alert" style="float: left; margin: 12px 12px 20px 0;"></span>Confirma a ação?</p>
+    </div>
+
+    <script>
+        function fill_form(obj) {
+            Object.keys(obj).forEach(function (element, index, array) {
+                try {
+                    if (Array.isArray(obj[element]) && obj[element].length) {
+                        var table = '';
+                        if (element == "plagues" || element == "places") {
+                            obj[element].forEach(function (sub_element, sub_index, sub_array) {
+                                if (sub_index == 0 || sub_index % 4 == 0) {
+                                    table += '<div class="row botton-border">';
+                                }
+                                if ((sub_index + 1) % 4 != 0) {
+                                    table += '<div class="col-2  right-border">' + obj[element][sub_index]['name'] + '</div>' +
+                                        '<div class="col-1 right-border text-center">' + obj[element][sub_index]['quantity'] + '</div>';
+                                } else {
+                                    table += '<div class="col-2 right-border">' + obj[element][sub_index]['name'] + '</div>' +
+                                        '<div class="col-1 text-center">' + obj[element][sub_index]['quantity'] + '</div></div>';
+                                }
+                            });
+                            if (obj[element].length % 4 != 0) {
+                                for (i = 0; i < (3 - (obj[element].length % 4)); i++) {
+                                    table += '<div class="col-2 right-border"></div><div class="col-1 right-border"></div>';
+                                }
+                                table += '<div class="col-2 right-border"></div><div class="col-1 "></div></div>';
+                            }
+
+                        } else {
+                            obj[element].forEach(function (sub_element, sub_index, sub_array) {
+                                if (sub_index == 0 || sub_index % 2 == 0) {
+                                    table += '<div class="row botton-border"><div class="col-5 right-border">' + obj[element][sub_index]['name'] + '</div>' +
+                                        '<div class="col-1 right-border text-center">' + obj[element][sub_index]['quantity'].replace('.', ',') + '</div>';
+                                } else {
+                                    table += '<div class="col-5 right-border">' + obj[element][sub_index]['name'] + '</div>' +
+                                        '<div class="col-1 text-center">' + obj[element][sub_index]['quantity'].replace('.',',') + '</div></div>';
+                                }
+                            });
+                            if (obj[element].length % 2 != 0) {
+                                table += '<div class="col-5 right-border" ></div><div class="col-1"></div></div>';
+                            }
+                        }
+                        jQuery("#" + element).before(table);
+                    } else {
+                        jQuery("#" + element).html(obj[element]);
+                    }
+
+                } catch (e) {
+
+                }
+            });
+            if (obj.uf) {
+                var signatureSrcPath = '/api/company/technical-managers/' + obj.uf + '/signature';
+                jQuery('#technical_responsible_signature').attr('src', signatureSrcPath).on('error', function () { jQuery(this).css('visibility', 'hidden'); });
+            }
+        }
+        window.onload = function () {
+            var params = new URLSearchParams(location.search);
+            fetch('/api/inea/raae?year=' + encodeURIComponent(params.get('ano')) + '&month=' + encodeURIComponent(params.get('mes')), { credentials: 'same-origin' })
+                .then(function (r) {
+                    if (r.status === 401) { location.href = '/login'; throw new Error('Sessão expirada'); }
+                    if (!r.ok) return r.json().then(function (p) { throw new Error(p.detail || 'Erro ao gerar o documento'); });
+                    return r.json();
+                })
+                .then(function (info) { fill_form(info); })
+                .catch(function (e) { document.body.insertAdjacentHTML('afterbegin', '<p style="color:#c00;padding:16px">' + e.message + '</p>'); });
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,855 @@
+﻿
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+          crossorigin="anonymous">
+    <title>Comprovante de execução de serviços / Controle de Vetores e Pragas Urbanas </title>
+
+    <link rel="stylesheet" href="style-inea.css">
+
+    <!--[if IE 8 ]>
+    <![endif]-->
+    <style>
+        .center-img {
+            display: block;
+            width: 50%;
+            min-width: 140px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .light-gray {
+            background-color: #f3f3f3;
+        }
+
+        .short-height {
+            line-height: 19px;
+        }
+    </style>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div style="padding: 10px; margin-bottom: 55px">
+        <div class="container ">
+            <div class="row botton-border" >
+                <div class="col-2">
+                    <img src="/api/tenant/assets/logo" style="height:50px; margin:2pt" />
+                </div>
+                <div class="col-10">
+                    <div class="row">
+                        <div class="col-7">
+                            <span id="company_company_name" data-name="company_company_name"></span>
+                        </div>
+                        <div class="col-5">
+                            <span id="company_phone" data-name="company_phone"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-7">
+                            <span id="company_address" data-name="company_address"></span>
+                        </div>
+                        <div class="col-5">
+                            <span id="company_email" data-name="company_email"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8 title right-border normal-line">
+                    Comprovante de execução de serviços /
+                </div>
+                <div class="col-4 title normal-line">
+                    Nº <span id="ces_number" data-name="ces_number"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8 sub-title right-border">
+                    Controle de Vetores e Pragas Urbanas
+                </div>
+                <div class="col-4">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 header">
+                    Informações da empresa especializada:
+                </div>
+            </div>
+            <div class="row botton-border">
+                <div class="col-3 text-bold right-border">
+                    CNPJ
+                </div>
+                <div class="col-3 right-border">
+                    Código Inea
+                </div>
+                <div class="col-6 text-center">
+                    Licença Ambiental (LAS/LO)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 right-border">
+                    <span id="company_cpf_cnpj"></span>
+                </div>
+                <div class="col-3 right-border">
+                    <span id="inea_code"></span>
+                </div>
+                <div class="col-3 right-border">
+                    Nº: <span id="environmental_permit"></span>
+                </div>
+                <div class="col-3">
+                    Validade: <span id="environmental_permit_expiration"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 header botton-border">
+                    Informações do cliente:
+                </div>
+            </div>
+            <div class="row botton-border">
+                <div class="col-12">
+                    Nome/Razão Social: <span id="company_name"></span>
+                </div>
+            </div>
+            <div class="row botton-border">
+                <div class="col-12">
+                    Nome Fantasia: <span id="trading_name"></span>
+                </div>
+            </div>
+            <div class="row botton-border">
+                <div class="col-7 right-border">
+                    Tipo de Atividade: <span id="activity_type"></span>
+                </div>
+                <div class="col-5">
+                    CNPJ: <span id="cpf_cnpj"></span>
+                </div>
+            </div>
+            <div class="row botton-border">
+                <div class="col-12">
+                    Endereço: <span id="address"></span>
+                </div>
+            </div>
+            <div class="row botton-border">
+                <div class="col-4 right-border">
+                    Bairro: <span id="neighborhood"></span>
+                </div>
+                <div class="col-5 right-border">
+                    Município: <span id="city"></span>
+                </div>
+                <div class="col-3">
+                    CEP: <span id="zipcode"></span>
+                </div>
+            </div>
+            <div class="row botton-border">
+                <div class="col-3 right-border">
+                    Telefone: <span id="phone"></span>
+                </div>
+                <div class="col-3 right-border">
+                    Fax: <span id="fax"></span>
+                </div>
+                <div class="col-6">
+                    E-mail: <span id="email"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 right-border">
+                    Contato: <span id="contact_name"></span>
+                </div>
+                <div class="col-6">
+                    Função: <span id="contact_function"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 header">
+                    Vetor(es) ou praga(s) urbana(s) controlado(s):
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 checkitem">
+                    <i id="plague_kitchen_roach" class="far fa-square"></i> Barata de cozinha
+                </div>
+                <div class=" checkitem" style="width: 22%">
+                    <i id="plague_sewer_roach" class="far fa-square"></i> Barata de esgoto
+                </div>
+                <div class=" checkitem" style="width: 13%">
+                    <i id="plague_rat" class="far fa-square"></i> Rato
+                </div>
+                <div class=" checkitem" style="width: 13%">
+                    <i id="plague_vole" class="far fa-square"></i> Ratazana
+                </div>
+                <div class=" checkitem" style="width: 16%">
+                    <i id="plague_mouse" class="far fa-square"></i> Camundongo
+                </div>
+                <div class=" checkitem" style="width: 10%">
+                    <i id="plague_flea" class="far fa-square"></i> Pulga
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 checkitem">
+                    <i id="plague_undergroung_termite" class="far fa-square"></i> Cupim subterrâneo
+                </div>
+                <div class=" checkitem" style="width: 22%">
+                    <i id="plague_wood_termite" class="far fa-square"></i> Cupim de madeira seca
+                </div>
+                <div class=" checkitem" style="width: 13%">
+                    <i id="plague_fly" class="far fa-square"></i> Mosca
+                </div>
+                <div class=" checkitem" style="width: 13%">
+                    <i id="plague_mosquito" class="far fa-square"></i> Mosquito
+                </div>
+                <div class=" checkitem" style="width: 26%">
+                    <i id="plague_other" class="far fa-square"></i> Outro<span id="other_description">______________________</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 header">
+                    Atividade desenvolvida:
+                </div>
+            </div>
+            <div class="row botton-border">
+                <div class="col-4 checkitem right-border">
+                    <i id="non_chemicals_checkbox" class="far fa-square"></i>
+                    Controle não químico
+                </div>
+                <div class="col-8">
+                    Especificar: <span id="non_chemicals"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 checkitem">
+                    <i id="products_checkbox" class="far fa-square"></i>
+                    Controle químico
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 header">
+                    Produtos químicos e equipamentos empregados:
+                </div>
+            </div>
+            <div class="row text-center botton-border">
+                <div class="col-1 right-border">
+                    Cadastro Inea
+                </div>
+                <div class="col-2 right-border">
+                    Grupo Químico
+                </div>
+                <div class="col-2 right-border">
+                    Nome do Princípio Ativo
+                </div>
+                <div class="col-2 right-border">
+                    Concentração de uso (%)
+                </div>
+                <div class="col-1 right-border">
+                    Diluente
+                </div>
+                <div class="col-1 right-border">
+                    Quantidade Total (l/g)
+                </div>
+                <div class="col-1 right-border">
+                    Praga(s)-alvo
+                </div>
+                <div class="col-2">
+                    Equipamento(s)
+                </div>
+            </div>
+            <span id="products"></span>
+            <div class="row botton-border">
+                <div class="col-1 right-border">
+
+                </div>
+                <div class="col-2 right-border">
+
+                </div>
+                <div class="col-2 right-border">
+
+                </div>
+                <div class="col-2 right-border">
+
+                </div>
+                <div class="col-1 right-border">
+
+                </div>
+                <div class="col-1 right-border">
+
+                </div>
+                <div class="col-1 right-border">
+
+                </div>
+                <div class="col-2">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-title">
+                    Informações ao consumidor
+                </div>
+            </div>
+            <div class="row normal-line">
+                <p class="col-12 text-bold">
+                    A
+                    <span class="text-underline">Garantia de Assistência Técnica</span> - GAT é uma expressão utilizada pelas empresas de controle de
+                    pragas para definir o prazo de compromisso com o cliente pelos serviçõs prestados.
+                    <br /> A GAT foi estabelecida pelo mercado com base em experiências técnicas agregadas às características biológicas
+                    e comportamentais do vetor ou da praga-alvo, do efeito residual dos produtos químicos utilizados, das
+                    condições físicas e ambientais do local que sofreu a ação de controle e da metodologia de aplicação.
+                    Veja os prazos do GAT no verso.
+                    <br /> As aplicações espaciais de inseticidas para controle de mosquitos de importância em Saúde Pública, por
+                    Ultra Baixo Volume (UBV) ou por Termonebulização (FOG) somente poderão ser praticadas nas áreas externas
+                    das edificações e como metodologia complementar às demais ações de controle. Essas aplicações deverão
+                    ser realizadas, exclusivamente, nas primeiras horas da manhã ou nos finais de tarde, de acordo com o
+                    período de atividade da espécie-alvo.
+                    <br />
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-12 header text-center">
+                    Medidas corretivas e/ou preventivas
+                </div>
+            </div>
+            <div class="row text-center botton-border">
+                <div class="col-12 text-uppercase right-border">
+                    Informação no Anexo
+                </div>
+            </div>
+            <div class="row"></div>
+            <div class="row header">
+                <div class="col-4 text-center right-border">
+                    Aplicador
+                </div>
+                <div class="col-4 text-center right-border">
+                    Responsável Técnico
+                </div>
+                <div class="col-4 text-center">
+                    Cliente
+                </div>
+            </div>
+            <div class="row botton-border">
+                <div class="col-4 right-border">
+                    Nome: <span id="companyuser_execution"></span>
+                </div>
+                <div class="col-4 right-border">
+                    Nome: <span id="technical_manager"></span>
+                </div>
+                <div class="col-4 font-small">
+                    <i class="far fa-square"></i> Recebi o presente Comprovante de Execução de Serviço.
+                </div>
+            </div>
+            <div class="row" style="max-height: 220px;">
+                <div class="col-4 right-border">
+                    Assinatura
+                    <div style="margin-bottom: 2px" class="center-img">
+                        <img id="applicant_signature"/>
+                    </div>
+                </div>
+                <div class="col-4 right-border">
+                    Assinatura / Nº do Registro no Conselho de Classe
+                    <div style="margin-bottom: 2px; max-height:140px; width:100px" class="center-img">
+                        <img id="technical_responsible_signature" style="height: 100%; width: 100%"/>
+                    </div>
+                </div>
+                <div class="col-2 right-border">
+                    Assinatura
+                    <div style="margin-bottom: 2px" class="center-img">
+                        <img id="responsible_signature" />
+                    </div>
+                </div>
+                <div class="col-2">
+                    Data do Serviço <br /> <span id="date"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="padding: 10px">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 header text-center normal-line">
+                    Informações para uso médico (Disque-intoxicação: 0800-7226001)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-bold short-height">
+                    <span class="text-uppercase">Centro de Informações Toxico-Farmacológico do Rio de Janeiro</span><br />
+                    <span>Hospital Universitário Clementino Fraga Filho</span><br />
+                    <span>Endereço: Av. Brigadeiro Trompovsky, s/n UFRJ - 8 andar, sala 08E01 - Ilha do Fundão - Rio de Janeiro - RJ</span><br />
+                    <span>Telefone: (21) 2573-3244 / 0800-7226001 - Fax: (21) 2573-7079</span><br />
+                    <span>E-mail: <a href="/">intox_rj@hucff.ufrj.br</a></span><br />
+                    <span>Centro de Controle de Intoxicações de Niterói</span><br />
+                    <span>Hospital Universitário Antônio Pedro</span><br />
+                    <span>Endereço: Rua Marquês do Paraná,303 - Centro - Niterói - RJ</span><br />
+                    <span>Telefone: (21) 2717-0521 / 2717-0148 - R. 4 / 2717-9783 / 2629-9255 / 2620-2828 R. 152 Fax: (21) 2717-0521 R. 5</span><br />
+                    <span>E-mail: ccin@huap.uff.br ou <a href="/">ccilgac@vm.uff.br</a></span>
+                </div>
+            </div>
+            <section class="text-uppercase">
+
+                <div class="row header">
+                    <div class="col-8 right-border">
+                        <div class="text-center">
+                            <span>Inseticidas</span>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="text-center">
+                            <span>Rodenticidas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row sub-title light-gray botton-border text-center">
+                    <div class="col-1 right-border">Código</div>
+                    <div class="col-3 right-border">Grupo Químico</div>
+                    <div class="col-1 right-border">Código</div>
+                    <div class="col-3 right-border">Grupo Químico</div>
+                    <div class="col-1 right-border">Código</div>
+                    <div class="col-3">Grupo Químico</div>
+                </div>
+                <div class="row botton-border">
+                    <div class="col-1 right-border text-center">1</div>
+                    <div class="col-3 right-border">Amidinohidrazona</div>
+                    <div class="col-1 right-border text-center">8</div>
+                    <div class="col-3 right-border">Neonicotinóide</div>
+                    <div class="col-1 right-border text-center">15</div>
+                    <div class="col-3">Cumarínico</div>
+                </div>
+                <div class="row botton-border">
+                    <div class="col-1 right-border text-center">2</div>
+                    <div class="col-3 right-border">Benzoiluréia</div>
+                    <div class="col-1 right-border text-center">9</div>
+                    <div class="col-3 right-border">Organofosforado</div>
+                    <div class="col-1 right-border text-center">16</div>
+                    <div class="col-3">Indadiona</div>
+                </div>
+                <div class="row botton-border">
+                    <div class="col-1 right-border text-center">3</div>
+                    <div class="col-3 right-border">Éster Alifático</div>
+                    <div class="col-1 right-border text-center">10</div>
+                    <div class="col-3 right-border">Pirazol</div>
+                    <div class="col-1 right-border text-center">17</div>
+                    <div class="col-3">Benzotiopiranona</div>
+                </div>
+                <div class="row botton-border">
+                    <div class="col-1 right-border text-center">4</div>
+                    <div class="col-3 right-border">Éter Piridiloxipropílico</div>
+                    <div class="col-1 right-border text-center">11</div>
+                    <div class="col-3 right-border">Piretróide</div>
+                    <div class="col-1 right-border text-center">18</div>
+                    <div class="col-3">Oxadiazina</div>
+                </div>
+                <div class="row botton-border">
+                    <div class="col-1 right-border text-center">5</div>
+                    <div class="col-3 right-border">Inorgânico</div>
+                    <div class="col-1 right-border text-center">12</div>
+                    <div class="col-3 right-border">Sulfonamida</div>
+                    <div class="col-1 right-border text-center">19</div>
+                    <div class="col-3"></div>
+                </div>
+                <div class="row botton-border">
+                    <div class="col-1 right-border text-center">6</div>
+                    <div class="col-3 right-border">Inseticida Microbiológico</div>
+                    <div class="col-1 right-border text-center">13</div>
+                    <div class="col-3 right-border">Triazinamina</div>
+                    <div class="col-1 right-border text-center">20</div>
+                    <div class="col-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1 right-border text-center">7</div>
+                    <div class="col-3 right-border">Metil Carbamato</div>
+                    <div class="col-1 right-border text-center">14</div>
+                    <div class="col-3 right-border">Tetroxocano</div>
+                    <div class="col-1 right-border text-center">21</div>
+                    <div class="col-3"></div>
+                </div>
+                <div class="row header">
+                    <div class="col-12 text-center">Código dos Equipamentos</div>
+                </div>
+                <div class="row botton-border">
+                    <div class="col-1 right-border text-center">1</div>
+                    <div class="col-3 right-border">Pulverizador Manual</div>
+                    <div class="col-1 right-border text-center">6</div>
+                    <div class="col-3 right-border">Atomizador</div>
+                    <div class="col-1 right-border text-center">11</div>
+                    <div class="col-3">Armadilhas Adesivas</div>
+                </div>
+                <div class="row botton-border">
+                    <div class="col-1 right-border text-center">2</div>
+                    <div class="col-3 right-border">Pulverizador Motorizado</div>
+                    <div class="col-1 right-border text-center">7</div>
+                    <div class="col-3 right-border">Polvilhadeira</div>
+                    <div class="col-1 right-border text-center">12</div>
+                    <div class="col-3"></div>
+                </div>
+                <div class="row botton-border">
+                    <div class="col-1 right-border text-center">3</div>
+                    <div class="col-3 right-border">Pistola Aplicadora de gel</div>
+                    <div class="col-1 right-border text-center">8</div>
+                    <div class="col-3 right-border">Porta iscas para roedores</div>
+                    <div class="col-1 right-border text-center">13</div>
+                    <div class="col-3"></div>
+                </div>
+                <div class="row botton-border">
+                    <div class="col-1 right-border text-center">4</div>
+                    <div class="col-3 right-border">Seringa Aplicadora de gel</div>
+                    <div class="col-1 right-border text-center">9</div>
+                    <div class="col-3 right-border">Porta iscas para baratas</div>
+                    <div class="col-1 right-border text-center">14</div>
+                    <div class="col-3"></div>
+                </div>
+                <div class="row botton-border">
+                    <div class="col-1 right-border text-center">5</div>
+                    <div class="col-3 right-border">Termonebulização</div>
+                    <div class="col-1 right-border text-center">10</div>
+                    <div class="col-3 right-border">Porta iscas para formigas</div>
+                    <div class="col-1 right-border text-center">15</div>
+                    <div class="col-3"></div>
+                </div>
+                <div class="row header text-center">
+                    <div class="col-12">Prazos para garantia de Assistência técnica (GAT)</div>
+                </div>
+            </section>
+            <div class="row botton-border text-center text-uppercase">
+                <div class="col-4 right-border" style="line-height: 56px">Pragas</div>
+                <div class="col-4 right-border" style="line-height: 56px">Residências, Escritórios e Similares</div>
+                <div class="col-4">Áreas de manipulação de alimentos e Similares</div>
+            </div>
+            <div class="row botton-border">
+                <div class="col-4 right-border" style="line-height: 30px">Formigas, doceira, baratas, pulgas, carrapatos, ratazanas, ratos de telhado e Camundongos.</div>
+                <div class="col-4 right-border text-center" style="line-height: 60px">3 meses</div>
+                <div class="col-4" style="line-height: 20px">Contrato de manutenção permanete, com base no artigo 1º da Lei RJ nº 2001, de 29 de abril de 1992*</div>
+            </div>
+            <div class="row botton-border">
+                <div class="col-4 right-border">Moscas e mosquitos (pernilongos/dengue)</div>
+                <div class="col-8">Contrato de manutenção permanentes</div>
+            </div>
+            <div class="row botton-border">
+                <div class="col-4 right-border">Cupins e brocas</div>
+                <div class="col-8">Prazo mínimo 2 anos ou contrato</div>
+            </div>
+            <div class="row">
+                <div class="col-12 short-height">
+                    <b>* <u>Lei nº 2001, de 29 de abril de 1992</u></b> - "Estabelece a obrigatoriedade do controle de vetores nos estabelecimentos indicados, como forma de garantir a saúde da população exposta".<br />
+                    <b><u>Art. 1º:</u></b> Ficam obrigados os responsáveis pelos estabelecimentos que de alguma forma lidem com produtos alimentícios, a realizar o controle da infestação de vetores de doenças, mantendo para isso sob contrato permanente, firma de combate a vetores credenciada pelo órgão estadual de controle ambiental.
+                </div>
+            </div>
+            <div class="row header text-center">
+                <div class="col-12">
+                    Medidas de Segurança
+                </div>
+            </div>
+            <div class="row text-center light-gray">
+                <div class="col-12 text-left text-uppercase">
+                    <b>Para controle de insetos quando utilizados inseticidas líquidos:</b>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12" style="margin-top: 10px; line-height: 18px">
+                    <ul>
+                        <li>Aguardar no mínimo 6 (seis) horas para permitir o ingresso de pessoas e animais.</li>
+                        <li>Abrir as janelas para arejar o ambiente antes de ocupar o local desinsetizado.</li>
+                        <li>Observar um prazo maior para o acesso de crianças, pessoas idosas e alérgicas ao local desinsetizado.</li>
+                        <li>Lavar com detergente as louças e utensílios expostos aos vapores inseticidas.</li>
+                        <li>Aguardar 48h (quarenta e oito) horas para limpar o local tratado.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row light-gray">
+                <div class="col-12 botton-border">
+                    <span class="text-uppercase text-bold text-uppercase">Para controle de roedores:</span>
+                    <ul>
+                        <li>Proteger as iscas do aesso de crianças e animais domésticos</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2 text-center text-uppercase right-border" style="line-height: 44px; vertical-align: middle" ;>
+                    <b>Dúvidas e Reclamações</b>
+                </div>
+                <div class="col-10" style="font-weight: bold; line-height: 18px">
+                    INEA: Instituto Estadual do Ambiente<br />
+                    DILAM: Diretoria de Licenciamento Ambiental<br />
+                    GELAF: Gerência de Licenciamentode Atividades Agropecuária e Florestal<br />
+                    Rua Sacadura Cabral, 103 - 8º andar - Saúde - Rio de Janeiro/RJ.<br />
+                    Tel. (21) 2334-5295 e 2334-5293
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="padding: 10px;">
+        <div class="container ">
+            <div class="row botton-border">
+                <div class="col-2 text-center">
+                    <img src="/api/tenant/assets/logo" style="height:50px; margin:2pt" />
+                </div>
+                <div class="col-10 text-bold">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <span id="company_company_name" data-name="company_company_name"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <span id="company_address" data-name="company_address"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <span class="company_phone" data-name="company_phone"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-left text-center">
+                            <a><span data-name="company_email"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center text-bold">
+                    ANEXO DA OS <span id="ces_number" data-name="ces_number"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 header text-center botton-border">
+                    Descrição do Serviço
+                </div>
+            </div>
+            <div class="row botton-border">
+                <span data-name="service_description" style="padding-left: 5px"></span>
+            </div>
+            <div class="row botton-border"></div>
+            <div class="row botton-border"></div>
+            <div class="row botton-border"></div>
+            <div class="row botton-border"></div>
+            <div class="row botton-border"></div>
+            <div class="row botton-border"></div>
+            <div class="row botton-border"></div>
+            <div class="row botton-border"></div>
+            <div class="row botton-border"></div>
+            <div class="row"></div>
+            <div class="row">
+                <div class="col-12 header text-center botton-border">
+                    Observações
+                </div>
+            </div>
+            <div class="row botton-border">
+                <span data-name="observations" style="padding-left: 5px"></span>
+            </div>
+            <div class="row botton-border"></div>
+            <div class="row botton-border"></div>
+            <div class="row botton-border"></div>
+            <div class="row botton-border"></div>
+            <div class="row botton-border"></div>
+            <div class="row botton-border"></div>
+            <div class="row botton-border"></div>
+            <div class="row botton-border"></div>
+            <div class="row botton-border"></div>
+            <div class="row botton-border"></div>
+
+            <div class="row"></div>
+
+            <div class="row">
+                <div class="col-3 text-center header">
+                    Horário de Início
+                </div>
+                <div class="col-3 text-center header">
+                    Horário de Término
+                </div>
+                <div class="col-3 text-center header">
+                    Acompanhado por:
+                </div>
+                <div class="col-3 text-center header">
+                    Função
+                </div>
+            </div>
+
+            <div class="row botton-border">
+                <div class="col-3 right-border text-center">
+                    <span data-name="time_start"></span>
+                </div>
+                <div class="col-3 right-border text-center">
+                    <span data-name="time_end"></span>
+                </div>
+                <div class="col-3 right-border text-center">
+                    <span data-name="responsible_name"></span>
+                </div>
+                <div class="col-3 text-center">
+                    <span data-name="responsible_business"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 header text-center">
+                    MEDIDAS CORRETIVAS E/OU PREVENTIVAS
+                </div>
+            </div>
+            <div id="list_measures">
+                <div class="row botton-border"></div>
+                <div class="row botton-border"></div>
+                <div class="row botton-border"></div>
+                <div class="row botton-border"></div>
+                <div class="row botton-border"></div>
+            </div>
+            <div class="row">
+                <div id="evidence-images"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+
+
+
+    <div id="dialog-confirm" style="display:none;" title="">
+        <p id="innerText"><span class="ui-icon ui-icon-alert" style="float: left; margin: 12px 12px 20px 0;"></span>Confirma a ação?</p>
+    </div>
+
+    <script>
+        function fill_form(obj) {
+            Object.keys(obj).forEach(function (element, index, array) {
+                try {
+                    if (Array.isArray(obj[element]) && obj[element].length) {
+                        if (element == "plagues") {
+                            obj[element].forEach(function (sub_element, sub_index, sub_array) {
+                                jQuery("#" + element).after(
+
+                                    '<div class="row botton-border">' +
+                                    '<div class="col-2 right-border">' + obj[element][sub_index] + '</div>' +
+                                    '<div class="col-10">' + '' + '</div></div>');
+                            })
+                        }
+                        if (element == "products") {
+                            obj[element].forEach(function (sub_element, sub_index, sub_array) {
+                                jQuery("#" + element).after(
+
+                                    '<div class="row botton-border">' +
+                                    '<div class="col-1 right-border">' + obj[element][sub_index]['chemical_code'] + '</div>' +
+                                    '<div class="col-2 right-border">' + obj[element][sub_index]['chemical_group'] + '</div>' +
+                                    '<div class="col-2 right-border">' + obj[element][sub_index]['active_ingredient'] + '</div>' +
+                                    '<div class="col-2 right-border">' + obj[element][sub_index]['concentration'] + ' % </div>' +
+                                    '<div class="col-1 right-border">' + obj[element][sub_index]['diluent'] + '</div>' +
+                                    '<div class="col-1 right-border">' + obj[element][sub_index]['quantity'] + '</div>' +
+                                    '<div class="col-1 right-border">' + obj[element][sub_index]['plague'] + '</div>' +
+                                    '<div class="col-2">' + obj[element][sub_index]['equipment'] + '</div></div>');
+                            })
+                            $("#products_checkbox").removeClass();
+                            $("#products_checkbox").addClass("fas fa-check-square");
+                        }
+                    }
+                    else {
+                        if (element.startsWith("plague_") && obj[element]) {
+                            $("#" + element).removeClass();
+                            $("#" + element).addClass("fas fa-check-square");
+                        }
+                        else if (element == "applicant_signature") {
+                             if (obj[element]) {
+                                jQuery("#" + element).attr('src', obj[element]).attr({ 'width': '100%', 'bottom': '40px' });
+                             }
+                        }
+                        else if (element == "responsible_signature") {
+                            if (obj[element]) {
+                                jQuery("#" + element).attr('src', obj[element]).attr({ 'width': '100%', 'bottom': '40px' });
+                            }
+
+                        }
+                        else {
+                            jQuery("#" + element).html(obj[element]);
+                            jQuery("[data-name=" + element + "]").html(obj[element]);
+                        }
+                    }
+                    if (obj['non_chemicals']) {
+                        $("#non_chemicals_checkbox").removeClass();
+                        $("#non_chemicals_checkbox").addClass("fas fa-check-square");
+                    }
+                    if (element == 'corrective_preventive_measures') {
+                        var $listMeasures = $('#list_measures');
+                        var header = '<table class="preventive-measures"><thead><tr><th>Local</th><th>Não conformidade</th><th>Sugestão</th></tr></thead></table>'
+                        $($listMeasures.find('.row')[0]).append(header);
+                        var dataInput = obj['corrective_preventive_measures'];
+                        for (var i = 0; i < dataInput.length; i++) {
+                            var item = '<table class="preventive-measures"><tbody><tr><td>' + dataInput[i].place + '</td><td>' + dataInput[i].description + '</td><td>' + dataInput[i].suggestion + '</td></tr></tbody></table>';
+                            $($listMeasures.find('.row')[i+1]).append(item);
+                        }
+                    }
+                    if (element == 'evidencesImages')
+                    {
+                        var $evidenceImages = $('#evidence-images');
+                        var evidencesImagesObject = obj['evidencesImages'];
+                        for (var image of evidencesImagesObject) {
+                            var imageElement = '<figure class="evidence-placeholder"><img class="thumbnail" src="' + image + '" /></figure>';
+                            $evidenceImages.append(imageElement);
+                        }
+                    }
+                } catch (e) {
+
+                }
+            });
+            if (obj.uf) {
+                var signatureSrcPath = '/api/company/technical-managers/' + obj.uf + '/signature';
+                jQuery('#technical_responsible_signature').attr('src', signatureSrcPath).on('error', function () { jQuery(this).css('visibility', 'hidden'); });
+            }
+        }
+        window.onload = function () {
+            var params = new URLSearchParams(location.search);
+            fetch('/api/inea/ces/' + encodeURIComponent(params.get('os')), { credentials: 'same-origin' })
+                .then(function (r) {
+                    if (r.status === 401) { location.href = '/login'; throw new Error('Sessão expirada'); }
+                    if (!r.ok) return r.json().then(function (p) { throw new Error(p.detail || 'Erro ao gerar o documento'); });
+                    return r.json();
+                })
+                .then(function (info) { fill_form(info); })
+                .catch(function (e) { document.body.insertAdjacentHTML('afterbegin', '<p style="color:#c00;padding:16px">' + e.message + '</p>'); });
+        }
+
+    </script>
+
+    <style>
+        table.preventive-measures{
+            width: 100%;
+        }
+        table.preventive-measures thead {
+            text-align: center;
+            background: #f4f4f4;
+        }
+        table.preventive-measures tr {
+            line-height: 28px;
+            margin: 5px;
+        }
+        table.preventive-measures tr th, table.preventive-measures tr td {
+            width: 33.33%;
+            padding: 0 10px;
+            
+        }
+        table.preventive-measures tr th:nth-child(2n), table.preventive-measures tr td:nth-child(2n) {
+            border-left: 1px solid;
+            border-right: 1px solid;
+        }
+        #evidence-images {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+        img.thumbnail {            
+            border: 1px solid black;
+            max-height: 200px;
+            max-width: 200px;
+            margin: 5px;
+        }
+    </style>
+</body>
+
+</html>

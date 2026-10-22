@@ -1,0 +1,35 @@
+{
+	email {$ACME_EMAIL}
+	# Certificado HTTPS emitido no primeiro acesso de cada domínio, mas só para domínios
+	# cadastrados no painel (a API responde 200 em /internal/tls-check apenas para eles).
+	on_demand_tls {
+		ask http://app:8080/internal/tls-check
+	}
+}
+
+https:// {
+	tls {
+		on_demand
+	}
+
+	# Endpoints internos não são expostos para a internet.
+	@internal path /internal/*
+	respond @internal 404
+
+	encode zstd gzip
+
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		X-Frame-Options "SAMEORIGIN"
+		-Server
+	}
+
+	reverse_proxy app:8080
+}
+
+# Acesso HTTP redireciona para HTTPS.
+http:// {
+	redir https://{host}{uri} permanent
+}

@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/tests/">
+    <Project Path="tests/EasyOS.Tests/EasyOS.Tests.csproj" />
+  </Folder>
+  <Project Path="EasyOS.Api/EasyOS.Api.csproj" />
+  <Project Path="EasyOS.Domain/EasyOS.Domain.csproj" />
+  <Project Path="EasyOS.Infrastructure/EasyOS.Infrastructure.csproj" />
+</Solution>
